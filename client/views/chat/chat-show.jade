@@ -1,0 +1,14 @@
+//- Chat Title From Params {{chat.name}}
+.container
+  .row
+    .col-xs-8.col-xs-offset-2
+      h3#name: em {{displayName}}
+  .row
+    .col-xs-12.text-center.col-md-8.col-md-offset-2
+      .chatArea
+        .container.chatGroup(ng-repeat='message in messages')
+          h5.chatTag {{message.user}}{{message.time}}
+          p.chatMsg
+      .row
+        .col-xs-12
+          textarea(placeholder='message..').form-control#typeArea

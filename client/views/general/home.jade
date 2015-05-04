@@ -1,1 +1,8 @@
-h3 HOME
+h3.text-center {{name | uppercase}}
+.container
+  .row
+    .col-xs-8.col-xs-offset-2#homeButtons
+      .form-group
+        button.btn.btn-info.btn-xs.form-control(ui-sref='login') Log in
+      .form-group.text-center
+        button.btn.btn-success.btn-xs.form-control(ui-sref='register') Register

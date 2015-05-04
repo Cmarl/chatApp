@@ -1,0 +1,16 @@
+h3.text-center Menu
+.row
+  .col-md-6.col-xs-12
+    h3.text-center Create New Chat
+    h5 Chat Name
+    input.form-control(type='text', ng-model='newChat.name')
+    //- h5 Chat With:
+    //- input.form-control(type='text', ng-model='newChat.invited')
+    button.btn.btn-xs.btn-success.form-control(ng-click='newChat()') Create
+    h3.text-center Join Existing Chat
+    h5 Chat ID
+    input.form-control(type='text', ng-model='id')
+    button.btn.btn-xs.btn-info.form-control(ng-click='goToChat(id)') Go
+  .col-md-6.col-xs-12
+    h3.text-center Your Chats:
+    .container#chatList

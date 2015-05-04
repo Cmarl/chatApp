@@ -4,6 +4,10 @@ angular.module('chat')
 .controller('UsersCtrl', function($scope, $state, $window, User){
   $scope.name = $state.current.name;
 
+  $scope.oauth = function(provider){
+    User.oauth(provider);
+  };
+
   $scope.submit = function(user){
     if($scope.name === 'register'){
       User.register(user)
@@ -13,7 +17,7 @@ angular.module('chat')
       .catch(function(){
         $window.swal({title: 'Registration Error', text: 'There was a problem with your registration. Please try again.', type: 'error'});
       });
-    }else{
+      } else {
       User.login(user)
       .catch(function(){
         $window.swal({title: 'Login Error', text: 'There was a problem with your login. Please try again.', type: 'error'});
